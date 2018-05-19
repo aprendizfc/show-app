@@ -18,6 +18,14 @@ html {
   text-decoration: none;
 }
 
+:global(.flex) {
+  display: flex;
+}
+
+:global(.middle) {
+  align-items: center;
+}
+
 :global(.container) {
   width: 100%;
   padding-right: 15px;
