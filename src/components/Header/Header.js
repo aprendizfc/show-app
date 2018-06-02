@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './header.css';
 import logo from '../../assets/group.svg';
+import showapp from '../../assets/showapp.svg';
 
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
       <div className={`container ${styles.headerContent}`}>
         <a href="" className={`brand ${styles.brand}`}>
           <img src={logo} className={styles.logo} />
-          <span className={styles.appName}>Showapp</span>
+          <img src={showapp} />
         </a>
         <nav className="nav">
           <a href="">Movies</a>
