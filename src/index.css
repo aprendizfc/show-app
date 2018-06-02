@@ -14,8 +14,36 @@ html {
   text-decoration: none;
 }
 
-:global(.nav a) {
+:global(.nav .nav-item) {
+  position: relative;
+  color: #9fafb7;
+  font-weight: 500;
   text-decoration: none;
+  transition: color .3s ease;
+}
+
+:global(.nav .nav-item::after) {
+  content: "";
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+
+:global(.nav .nav-item.active) {
+  color: #55bdf8;
+}
+
+:global(.nav .nav-item.active::after) {
+  height: 2px;
+  background-color: #55bdf8;
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  left: 0;
+  opacity: 1;
+}
+
+:global(.nav .nav-item:not(:last-of-type)) {
+  margin-right: 25px;
 }
 
 :global(.flex) {
