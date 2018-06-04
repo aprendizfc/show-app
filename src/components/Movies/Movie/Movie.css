@@ -1,0 +1,52 @@
+.posterCard {
+  width: 100%;
+  max-width: 460px;
+  height: 204px;
+}
+
+.posterHolder {
+  width: 139px;
+  height: 100%;
+  background-size: cover;
+}
+
+.posterDetail {
+  flex: 1;
+  padding: 11px 10px 18px 22px;
+}
+
+.posterTitle {
+  width: 100%;
+  color: #687b82;
+  font-weight: 500;
+  margin: 0;
+}
+
+.posterOverview {
+  position: relative;
+  overflow: hidden;
+  font-size: 12px;
+  color: #687b82;
+  line-height: 1.2em;
+  max-height: 3.7em;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 21px;
+}
+
+.posterOverview::before {
+  content: '...';
+  position: absolute;
+  right: 11px;
+  bottom: 1px;
+}
+
+.posterOverview::after {
+  content: '';
+  position: absolute;
+  right: 11px;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  background-color: #fff;
+}
