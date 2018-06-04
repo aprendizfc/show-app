@@ -46,12 +46,25 @@ html {
   margin-right: 25px;
 }
 
+:global(.card) {
+  background-color: #fff;
+  box-shadow: 0 1px 4px 0 rgba(130, 130, 130, 0.5);
+}
+
 :global(.flex) {
   display: flex;
 }
 
+:global(.flex-wrap) {
+  flex-wrap: wrap;
+}
+
 :global(.middle) {
   align-items: center;
+}
+
+:global(.between) {
+  justify-content: space-between;
 }
 
 :global(.container) {
