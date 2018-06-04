@@ -22,7 +22,7 @@ class App extends Component {
           <Header />
           <Search />
 
-          <section className="container">
+          <section className="container flex flex-wrap">
             <Route exact path="/" render={() => <Redirect to="/movies" />} />
             <Route path="/movies" component={ScreenMovies} />
             <Route path="/series" component={ScreenSeries} />
