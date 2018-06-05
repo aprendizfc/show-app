@@ -28,7 +28,7 @@ class Movies extends Component {
   }
   render() {
     return (
-      <MoviesComponent movies={this.state.result} />
+      <MoviesComponent list={this.state.result} />
     );
   }
 }
