@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 // components
 import Movie from './Movie/Movie';
+import Poster from '../Poster/Poster';
 
 class Movies extends Component {
   static propTypes = {
@@ -21,4 +22,4 @@ class Movies extends Component {
   }
 }
 
-export default Movies;
+export default Poster(Movies);
