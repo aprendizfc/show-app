@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 // components
-import Movie from './Movie/Movie';
+import Movie from '../DisplayList/DisplayList';
 import Poster from '../Poster/Poster';
 
 class Movies extends Component {
