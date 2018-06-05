@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
 
+// components
+import SeriesComponent from '../../components/Series/Series';
+
 class Series extends Component {
   state = {
     result: [],
@@ -25,7 +28,7 @@ class Series extends Component {
   }
   render() {
     return (
-      <h1>Series</h1>
+      <SeriesComponent list={this.state.result} />
     );
   }
 }
