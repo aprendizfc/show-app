@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 // components
-import Movie from '../DisplayList/DisplayList';
+import Item from '../DisplayList/DisplayList';
 import Poster from '../Poster/Poster';
 
 class Movies extends Component {
   static propTypes = {
-    movies: PropTypes.array.isRequired,
+    list: PropTypes.array.isRequired,
   }
 
   render() {
-    const movies = this.props.movies.map(
-      movie => <Movie key={movie.id} movie={movie} />
+    const movies = this.props.list.map(
+      movie => <Item key={movie.id} item={movie} />
     )
     return (
       <React.Fragment>
