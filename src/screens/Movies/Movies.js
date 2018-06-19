@@ -10,25 +10,73 @@ class Movies extends Component {
   }
 
   componentDidMount() {
-    const headers = {
-      method: 'GET',
-    }
-
-    api.get('movie/popular', headers)
-      .then((res) => res.json())
+    this.getMovies()
       .then(data => {
-        console.log('​Movies -> componentDidMount -> data', data);
+        const newArr = data.results.map( movie => {
+          const movieVideo = this.getMovieVideo(movie);
+          movieVideo.then(video => {
+            const videoUrl = this.buildVideoUrl(video);
+            this.addPropertyToItem(movie, 'video_url', videoUrl);
+          })
+          return movie;
+        })
+        return newArr;
+      })
+      .then(result => {
         this.setState({
-          result: data.results,
+          result,
         })
       })
       .catch(err => {
         console.log('​Movies -> componentDidMount -> err', err);
       })
   }
+
+  getMovies() {
+    const headers = {
+      method: 'GET',
+    }
+
+    return api.get('movie/popular', headers)
+              .then(res => res.json())
+              .then(data => Promise.resolve(data))
+              .catch(err => Promise.reject(err))
+  }
+
+  getMovieVideo(movie) {
+    const headers = {
+      method: 'GET',
+    }
+    const { id } = movie;
+
+    return api.get(`movie/${id}/videos`)
+              .then(res => res.json())
+              .then(data => {
+                const { results } = data;
+                if ( results.length > 0 ) {
+                  return Promise.resolve(results[0]);
+                }
+              })
+              .catch(err => Promise.reject(err))
+  }
+
+  buildVideoUrl(video) {
+    const { key } = video;
+    return `https://www.youtube.com/embed/${key}`;
+  }
+
+  addPropertyToItem(obj, prop, value) {
+    if ( !obj.hasOwnProperty(prop) ) {
+      obj[prop] = value;
+    }
+  }
+
   render() {
     return (
-      <MoviesComponent list={this.state.result} />
+      <MoviesComponent
+        list={this.state.result}
+        addPropertyToItem={this.addPropertyToItem}
+      />
     );
   }
 }
