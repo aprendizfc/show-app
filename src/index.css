@@ -67,12 +67,35 @@ html {
   justify-content: space-between;
 }
 
+:global(.column) {
+  flex-direction: column;
+}
+
 :global(.container) {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+:global(.btn) {
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  padding: 5px 15px;
+}
+
+:global(.btn-border-primary) {
+  border-color: #00bdff;
+  color: #00bdff;
+  background-color: #fff;
 }
 
 @media (min-width: 576px) {
