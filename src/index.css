@@ -67,6 +67,10 @@ html {
   justify-content: space-between;
 }
 
+:global(.center) {
+  justify-content: center;
+}
+
 :global(.column) {
   flex-direction: column;
 }
