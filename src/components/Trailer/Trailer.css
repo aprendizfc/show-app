@@ -1,0 +1,22 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.63);
+  z-index: 999;
+}
+
+.trailer {
+  width: 598px;
+  height: 340px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: -37px;
+  right: 0;
+  cursor: pointer;
+}
