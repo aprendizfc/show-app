@@ -16,7 +16,7 @@ const Item = function(props) {
         style={{backgroundImage: `url(${POSTER_BASE_PATH}${POSTER_PATH})`}}
       >
       </div>
-      <div className={styles.posterDetail}>
+      <div className={`flex column ${styles.posterDetail}`}>
         <h4 className={`flex between ${styles.posterTitle}`}>
           {item.title}
           <span className={styles.posterAverage}>{item.vote_average}</span>
@@ -24,6 +24,9 @@ const Item = function(props) {
         <p className={styles.posterOverview}>
           {item.overview}
         </p>
+        <div className={`flex between middle ${styles.posterFooter}`}>
+          <button className="btn btn-border-primary">Ver Trailer</button>
+        </div>
       </div>
     </div>
   );
