@@ -61,8 +61,10 @@ class Movies extends Component {
   }
 
   buildVideoUrl(video) {
-    const { key } = video;
-    return `https://www.youtube.com/embed/${key}`;
+    if ( video ) {
+      const { key } = video;
+      return `https://www.youtube.com/embed/${key}`;
+    }
   }
 
   addPropertyToItem(obj, prop, value) {
