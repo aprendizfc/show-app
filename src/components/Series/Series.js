@@ -17,4 +17,4 @@ const Series = function(props) {
   );
 }
 
-export default Poster(Series);
+export default Series;
