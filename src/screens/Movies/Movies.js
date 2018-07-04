@@ -77,7 +77,6 @@ class Movies extends Component {
     return (
       <MoviesComponent
         list={this.state.result}
-        addPropertyToItem={this.addPropertyToItem}
       />
     );
   }
