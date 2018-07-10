@@ -1,0 +1,35 @@
+.searchForm {
+  background-color: #f3f6f7;
+  padding-top: 11px;
+  padding-bottom: 7px;
+}
+
+.searchIcon {
+  margin-right: 27px;
+}
+
+.searchInput {
+  width: 100%;
+  max-width: 228px;
+  border: 0;
+  font-style: italic;
+  font-size: 14px;
+  color: #a1adb2;
+  background-color: transparent;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: #a1adb2;
+}
+
+::ms-input-placeholder {
+  color: #a1adb2;
+}
+
+:ms-input-placeholder {
+  color: #a1adb2;
+}
