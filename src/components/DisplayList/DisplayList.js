@@ -14,6 +14,7 @@ class Item extends Component {
   }
 
   render() {
+    const { title, name } = this.props.item;
     return (
       <React.Fragment>
         <div className={`card flex ${styles.posterCard}`}>
@@ -24,7 +25,9 @@ class Item extends Component {
           </div>
           <div className={`flex column ${styles.posterDetail}`}>
             <h4 className={`flex between ${styles.posterTitle}`}>
-              {this.props.item.title}
+              {
+                title ? title : name
+              }
               <span className={styles.posterAverage}>{this.props.item.vote_average}</span>
             </h4>
             <p className={styles.posterOverview}>
