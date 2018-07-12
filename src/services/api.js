@@ -11,8 +11,14 @@ const api = (function() {
     return fetch(absoluteUrl, headers);
   }
 
+  const search = (url, headers) => {
+    const absoluteUrl = `${getAbsoluteUrl(url)}&query=${headers.data.query}`;
+    return fetch(absoluteUrl, headers);
+  }
+
   return {
     get: get,
+    search: search,
   }
 })();
 
