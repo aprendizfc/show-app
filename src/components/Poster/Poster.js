@@ -25,13 +25,24 @@ const Poster = BaseComponent => {
       })
     }
 
-    handleFavorite = movie => {
-      console.log('​Poster -> movie', movie);
+    addFavorite = movie => {
+      let favorites = JSON.parse(localStorage.getItem("favorites"));
+      
+      // check if favorites is null
+      if ( !favorites ) {
+        favorites = [movie];
+      } else {
+        favorites.push(movie);
+      }
+
+      localStorage.setItem("favorites", JSON.stringify(favorites));
     }
+
     render() {
       return (
         <BaseComponent
           handleToggleTrailer={this.toggleTrailer}
+          handleFavorite={this.addFavorite}
           isTrailerDisplayed={this.state.isTrailerDisplayed}
           posterUrl={this.POSTER_URL}
           {...this.props}
