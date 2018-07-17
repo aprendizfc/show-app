@@ -40,6 +40,12 @@ class Item extends Component {
               >
                 Ver Trailer
               </button>
+              <button
+                className="btn btn-border-primary"
+                onClick={() => this.props.handleFavorite(this.props.item)}
+              >
+                fav
+              </button>
             </div>
           </div>
         </div>
