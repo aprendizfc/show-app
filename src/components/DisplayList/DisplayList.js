@@ -35,14 +35,14 @@ class Item extends Component {
             </p>
             <div className={`flex between middle ${styles.posterFooter}`}>
               <button
-                onClick={this.props.handleToggleTrailer}
+                onClick={this.props.onToggleTrailer}
                 className="btn btn-border-primary"
               >
                 Ver Trailer
               </button>
               <button
                 className="btn btn-border-primary"
-                onClick={() => this.props.handleFavorite(this.props.item)}
+                onClick={() => this.props.onToggleFavorite(this.props.item)}
               >
                 fav
               </button>
@@ -52,7 +52,7 @@ class Item extends Component {
         {
           this.props.isTrailerDisplayed
             ? ( <Trailer
-                  toggleTrailer={this.props.handleToggleTrailer}
+                  toggleTrailer={this.props.onToggleTrailer}
                   url={this.props.item.video_url}
                 />
               )
