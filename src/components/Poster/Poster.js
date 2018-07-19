@@ -25,24 +25,33 @@ const Poster = BaseComponent => {
       })
     }
 
-    addFavorite = movie => {
+    toggleFavorite = movie => {
       let favorites = JSON.parse(localStorage.getItem("favorites"));
       
       // check if favorites is null
       if ( !favorites ) {
         favorites = [movie];
       } else {
-        favorites.push(movie);
+        const exists = this.checkItemInArray(movie, favorites);
+        if ( !exists ) {
+          favorites = favorites.concat(movie);
+        } else {
+          favorites = favorites.filter(item => item.id !== movie.id);
+        }
       }
 
       localStorage.setItem("favorites", JSON.stringify(favorites));
     }
 
+    checkItemInArray(item, arr) {
+      return arr.find( i => i.id === item.id);
+    }
+
     render() {
       return (
         <BaseComponent
-          handleToggleTrailer={this.toggleTrailer}
-          handleFavorite={this.addFavorite}
+          onToggleTrailer={this.toggleTrailer}
+          onToggleFavorite={this.toggleFavorite}
           isTrailerDisplayed={this.state.isTrailerDisplayed}
           posterUrl={this.POSTER_URL}
           {...this.props}
